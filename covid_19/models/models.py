@@ -3,9 +3,9 @@
 # from odoo import models, fields, api
 
 
-# class covid-19(models.Model):
-#     _name = 'covid-19.covid-19'
-#     _description = 'covid-19.covid-19'
+# class covid_19(models.Model):
+#     _name = 'covid_19.covid_19'
+#     _description = 'covid_19.covid_19'
 
 #     name = fields.Char()
 #     value = fields.Integer()
