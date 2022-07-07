@@ -7,7 +7,7 @@ class covid_19(models.Model):
     _name = 'covid.covid_19'
 
     source = fields.Char(string='Source', required=True)
-    date = fields.datetime(string='Date Time', required=True, default=fields.datetime.now())
+    date = fields.Datetime(string='Date Time', required=True, default=fields.Datetime.now())
     country_id = fields.Many2one(comodel_name="res.country", string="", required=True)
     infected = fields.Integer(string="Infected", required=True, default=0)
     recovered = fields.Integer(string="Recovered", required=True, default=0)
