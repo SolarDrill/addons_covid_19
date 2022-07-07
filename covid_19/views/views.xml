@@ -1,54 +1,58 @@
 <odoo>
   <data>
+
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="covid_19.list">
-      <field name="name">covid_19 list</field>
-      <field name="model">covid_19.covid_19</field>
+    <record model="ir.ui.view" id="covid_19_list">
+      <field name="name">Covid_19_List</field>
+      <field name="model">covid.covid_19</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="source"/>
+          <field name="date"/>
+          <field name="country_id"/>
+          <field name="infected"/>
+          <field name="recovered"/>
+          <field name="deceased"/>
         </tree>
       </field>
     </record>
--->
+    <!-- explicit form view definition -->
+    <record id="covid_19_form" model="ir.ui.view">
+        <field name="name">Covid_19_Form</field>
+        <field name="model">covid.covid_19</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                      <field name="source"/>
+                      <field name="date"/>
+                      <field name="country_id"/>
+                      <field name="infected"/>
+                      <field name="recovered"/>
+                      <field name="deceased"/>
+                        <field name="total_infected"/>
+                        <field name="total_recovered"/>
+                        <field name="total_deceased"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="covid_19.action_window">
-      <field name="name">covid_19 window</field>
-      <field name="res_model">covid_19.covid_19</field>
+    <record model="ir.actions.act_window" id="covid_19_action">
+      <field name="name">Registros</field>
+      <field name="res_model">covid.covid_19</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="covid_19.action_server">
-      <field name="name">covid_19 server</field>
-      <field name="model_id" ref="model_covid_19_covid_19"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="covid_19" id="covid_19.menu_root"/>
--->
+    <menuitem name="Covid_19" id="covid_19_menu"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="covid_19.menu_1" parent="covid_19.menu_root"/>
-    <menuitem name="Menu 2" id="covid_19.menu_2" parent="covid_19.menu_root"/>
--->
+    <menuitem name="Registros" id="covid_covid_19" parent="covid_19_menu" action="covid_19_action"/>
+
     <!-- actions -->
 <!--
     <menuitem name="List" id="covid_19.menu_1_list" parent="covid_19.menu_1"
