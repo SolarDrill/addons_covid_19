@@ -2,7 +2,7 @@
   <data>
 
     <!-- explicit list view definition -->
-    <record model="ir.ui.view" id="covid_19_list">
+    <record model="ir.ui.view" id="covid_19_lists">
       <field name="name">Covid_19_List</field>
       <field name="model">covid.covid_19</field>
       <field name="arch" type="xml">
