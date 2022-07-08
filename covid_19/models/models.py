@@ -5,7 +5,7 @@ from odoo import models, fields, api
 
 class covid_19(models.Model):
     _name = 'covid.covid_19'
-    _order = 'id descr'
+    _order = 'id desc'
 
     source = fields.Char(string='Source', required=True)
     date = fields.Datetime(string='Date Time', required=True, default=fields.Datetime.now())
